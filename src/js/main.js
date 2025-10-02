@@ -3,14 +3,14 @@ import setHeaderFooter from "./setHeaderFooter.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 
 
-const parkData = getParkData();
-const parkInfoLinks = getParkInfoLinks();
+
+
 
 function setParkIntro(data){
     const intro = document.querySelector(".intro");
     intro.innerHTML = 
-    `<h1>${parkData.fullName}</h1>
-    <p>${parkData.description}</p>
+    `<h1>${data.fullName}</h1>
+    <p>${data.description}</p>
     ` ;
 }
 
@@ -19,8 +19,13 @@ function setParkInfoLinks(data){
     const html = data.map(mediaCardTemplate);
     info.insertAdjacentHTML("afterbegin", html.join(""));
 }
+async function init() {
+  const parkData = await getParkData();
+  const links = getParkInfoLinks(parkData.images);
 
+  setHeaderFooter(parkData);
+  setParkIntro(parkData);
+  setParkInfoLinks(links);
+}
+init();
 
-setHeaderFooter(parkData);
-setParkIntro(parkData);
-setParkInfoLinks(parkInfoLinks);
