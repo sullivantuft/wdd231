@@ -234,3 +234,13 @@ export async function getParkData(){
   const parkData = await getJSON("parks?parkCode=glac");
   return parkData.data[0];
 }
+
+export async function getParkAlerts(code){
+  const parkData = await getJSON(`alerts?parkCode=${code}`);
+  return parkData.data;
+}
+
+export async function getParkVisitorCenters(code){
+  const parkData = await getJSON(`visitorcenters?parkCode=${code}`);
+  return parkData.data;
+}
