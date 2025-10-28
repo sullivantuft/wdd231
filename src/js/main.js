@@ -29,7 +29,7 @@ async function init() {
 }
 function enableNavigation(){
   const menuButton = document.querySelector("#global-nav-toggle");
-  const subMenuToggles = document.querySelectorAll(".global-nav__split-button__toggle");
+  //const subMenuToggles = document.querySelectorAll(".global-nav__split-button__toggle");
   menuButton.addEventListener("click", (ev) => {
     let target = ev.target;
     document.querySelector(".global-nav").classList.toggle("show");

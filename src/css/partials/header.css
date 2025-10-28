@@ -54,6 +54,8 @@
   background-color: var(--bs-black);
   color: white;
   fill: white;
+  display:grid;
+  grid-template-columns: auto 200px;
 }
 
 .global-header .icon{
@@ -63,6 +65,7 @@
 .global-header__right{
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .global-header__right .search-icon {
   padding: 0 1rem;
@@ -118,6 +121,9 @@
 }
 .global-nav__toggle[aria-expanded="true"] .global-nav__toggle--open{
   display:flex;
+}
+.global-nav.show{
+  max-height: 1000px;
 }
 
 
