@@ -1,4 +1,5 @@
-import spritePath from "../images/sprite.symbol.svg";
+const spritePath = "../images/sprite.symbol.svg"; // just a string
+
 export function footerTemplate(info){
     const mailing = getMailingAddress(info.addresses);
     const voice = getVoicePhone(info.contacts.phoneNumbers);
